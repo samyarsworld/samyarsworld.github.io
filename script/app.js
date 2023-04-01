@@ -1,55 +1,55 @@
-document.querySelector("#clear-path").addEventListener("click", clearGrid);
-document.querySelector("#clear").addEventListener("click", (e) => {
+document.getElementById("path-finder").addEventListener("click", pathFinderTab);
+
+document.getElementById("clear-path").addEventListener("click", clearGrid);
+document.getElementById("clear-all").addEventListener("click", (e) => {
   clearGrid(0, false, true);
   e.target.disabled = true;
-  document.querySelector("#clear-path").disabled = true;
+  document.getElementById("clear-path").disabled = true;
 });
-document.querySelector("#clear-path").addEventListener("click", (e) => {
+document.getElementById("clear-path").addEventListener("click", (e) => {
   clearGrid();
   e.target.disabled = true;
 });
 document
-  .querySelector("#maze-prim")
+  .getElementById("maze-prim")
   .addEventListener("click", () => generateMaze("prim"));
 document
-  .querySelector("#maze-recursive-backtracker")
+  .getElementById("maze-recursive-backtracker")
   .addEventListener("click", () => generateMaze("backtracker"));
 document
-  .querySelector("#maze-animation-recursive-backtracker")
+  .getElementById("maze-animation-recursive-backtracker")
   .addEventListener("click", () => generateMaze("backtracker-animated"));
 document
-  .querySelector("#maze-prim-animation")
+  .getElementById("maze-prim-animation")
   .addEventListener("click", () => generateMaze("prim-animated"));
-document.querySelector("#visualize").addEventListener("click", visualize);
+document.getElementById("visualize").addEventListener("click", visualize);
 document
-  .querySelector("#dfs")
+  .getElementById("dfs")
   .addEventListener("click", () => makeChoice("DFS"));
 document
-  .querySelector("#bfs")
+  .getElementById("bfs")
   .addEventListener("click", () => makeChoice("BFS"));
 document
-  .querySelector("#dijkstra")
+  .getElementById("dijkstra")
   .addEventListener("click", () => makeChoice("Dijkstra (UCS)"));
 document
-  .querySelector("#astar")
+  .getElementById("astar")
   .addEventListener("click", () => makeChoice("A*"));
 document
-  .querySelector("#greedybest")
+  .getElementById("greedybest")
   .addEventListener("click", () => makeChoice("Greedy Best First"));
 document
-  .querySelector("#bidirectional-astar")
+  .getElementById("bidirectional-astar")
   .addEventListener("click", () => makeChoice("Bidirectional A*"));
 document
-  .querySelector("#bidirectional-dijkstra")
+  .getElementById("bidirectional-dijkstra")
   .addEventListener("click", () => makeChoice("Bidirectional Dijkstra (UCS)"));
 
-document.querySelector("#path-finder").addEventListener("click", pathFinderTab);
-
 document
-  .querySelector("#minimum-spanning-tree")
+  .getElementById("minimum-spanning-tree")
   .addEventListener("click", minimumSpanningTab);
 document
-  .querySelector("#topological-sort")
+  .getElementById("topological-sort")
   .addEventListener("click", topologicalSortTab);
 
 let status = 0;
@@ -65,14 +65,14 @@ const width =
   document.body.clientWidth;
 
 function generateMaze(choice) {
-  document.querySelector("#visualize").textContent = `Visualize`;
-  document.querySelector("#visualize").disabled = true;
-  document.querySelector("#clear").disabled = true;
-  document.querySelector("#clear-path").disabled = true;
-  document.querySelector("#size-slider").disabled = true;
-  document.querySelector("#path-finding-grp-btn").disabled = true;
-  document.querySelector("#maze-generation-grp-btn").disabled = true;
-  document.querySelector("#breakpoint-toggler").click();
+  document.getElementById("visualize").textContent = `Visualize`;
+  document.getElementById("visualize").disabled = true;
+  document.getElementById("clear-all").disabled = true;
+  document.getElementById("clear-path").disabled = true;
+  document.getElementById("size-slider").disabled = true;
+  document.getElementById("path-finding-grp-btn").disabled = true;
+  document.getElementById("maze-generation-grp-btn").disabled = true;
+  document.getElementById("breakpoint-toggler").click();
 
   switch (choice) {
     case "prim":
@@ -90,12 +90,12 @@ function generateMaze(choice) {
   }
 }
 
+// Show the path finder algorithm
 function pathFinderTab() {
   clearToasts();
   let shortcutToastTriggerEl = document.getElementById("shortcut-toast");
   let shortcutToast = new mdb.Toast(shortcutToastTriggerEl);
   shortcutToast.show();
-  // document.querySelector("#breakpoint-toggler").click();
   setTimeout(() => shortcutToast.hide(), 6500);
 }
 
@@ -109,13 +109,15 @@ function topologicalSortTab() {
 
 function visualize() {
   running = runningMessage;
-  document.querySelector("#visualize").disabled = true;
-  document.querySelector("#clear").disabled = true;
-  document.querySelector("#clear-path").disabled = true;
-  document.querySelector("#size-slider").disabled = true;
-  document.querySelector("#path-finding-grp-btn").disabled = true;
-  document.querySelector("#maze-generation-grp-btn").disabled = true;
-  document.querySelector("#breakpoint-toggler").click();
+  document.getElementById("visualize").disabled = true;
+  document.getElementById("breakpoint-toggler").click();
+
+  document.getElementById("clear-all").disabled = true;
+  document.getElementById("clear-path").disabled = true;
+  document.getElementById("size-slider").disabled = true;
+  document.getElementById("path-finding-grp-btn").disabled = true;
+  document.getElementById("maze-generation-grp-btn").disabled = true;
+
   switch (running) {
     case "DFS":
       executeDFS();
@@ -165,22 +167,24 @@ function visualizeRT() {
       bidirectionalAStarRT(nodes, startNode, endNode);
       break;
   }
-  document.querySelector("#clear").disabled = false;
-  document.querySelector("#clear-path").disabled = false;
-  document.querySelector("#size-slider").disabled = false;
+  document.getElementById("clear-all").disabled = false;
+  document.getElementById("clear-path").disabled = false;
+  document.getElementById("size-slider").disabled = false;
+  document.getElementById("path-finding-grp-btn").disabled = false;
+  document.getElementById("maze-generation-grp-btn").disabled = false;
 }
 function makeChoice(choice) {
   running = "";
   clearGrid(1);
   runningMessage = choice;
-  let btn = document.querySelector("#visualize");
+  let btn = document.getElementById("visualize");
   btn.disabled = false;
   btn.textContent = `Visualize ${choice}`;
 }
 
 function executePrimMazeGeneration() {
   clearGrid(0, false, false);
-  document.querySelector("#breakpoint-toggler").click();
+  document.getElementById("breakpoint-toggler").click();
   for (let i = 0; i < nodes.length; ++i) {
     for (let j = 0; j < nodes[i].length; ++j) {
       nodes[i][j].divReference.classList.add("node-wall");
@@ -208,7 +212,7 @@ function executePrimMazeGeneration() {
 
 function executeRecursiveBacktrackerMazeGeneration() {
   clearGrid(0, false, false);
-  document.querySelector("#breakpoint-toggler").click();
+  document.getElementById("breakpoint-toggler").click();
   for (let i = 0; i < nodes.length; ++i) {
     for (let j = 0; j < nodes[i].length; ++j) {
       nodes[i][j].divReference.classList.add("node-wall");
