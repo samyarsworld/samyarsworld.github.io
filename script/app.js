@@ -1,15 +1,20 @@
+// Show and hide different tabs
 document.getElementById("path-finder").addEventListener("click", pathFinderTab);
+document.getElementById("min-tree").addEventListener("click", minTreeTab);
+document.getElementById("top-sort").addEventListener("click", topSortTab);
 
-document.getElementById("clear-path").addEventListener("click", clearGrid);
+// Clear path and disable the clear-path button
+document.getElementById("clear-path").addEventListener("click", (e) => {
+  clearGrid();
+  e.target.disabled = true;
+});
+// Clear all and disable the clear-path and clear-all buttons
 document.getElementById("clear-all").addEventListener("click", (e) => {
   clearGrid(0, false, true);
   e.target.disabled = true;
   document.getElementById("clear-path").disabled = true;
 });
-document.getElementById("clear-path").addEventListener("click", (e) => {
-  clearGrid();
-  e.target.disabled = true;
-});
+
 document
   .getElementById("maze-prim")
   .addEventListener("click", () => generateMaze("prim"));
@@ -44,13 +49,6 @@ document
 document
   .getElementById("bidirectional-dijkstra")
   .addEventListener("click", () => makeChoice("Bidirectional Dijkstra (UCS)"));
-
-document
-  .getElementById("minimum-spanning-tree")
-  .addEventListener("click", minimumSpanningTab);
-document
-  .getElementById("topological-sort")
-  .addEventListener("click", topologicalSortTab);
 
 let status = 0;
 let running = "";
@@ -90,22 +88,26 @@ function generateMaze(choice) {
   }
 }
 
-// Show the path finder algorithm
+// Show information toasts
 function pathFinderTab() {
   clearToasts();
-  let shortcutToastTriggerEl = document.getElementById("shortcut-toast");
-  let shortcutToast = new mdb.Toast(shortcutToastTriggerEl);
-  shortcutToast.show();
-  setTimeout(() => shortcutToast.hide(), 6500);
+  let pathToast = new mdb.Toast(document.getElementById("path-toast"));
+  pathToast.show();
+  setTimeout(() => pathToast.hide(), 5000);
 }
-
-function minimumSpanningTab() {
+function minTreeTab() {
   clearToasts();
+  let treeToast = new mdb.Toast(document.getElementById("tree-toast"));
+  treeToast.show();
+  setTimeout(() => treeToast.hide(), 5000);
 }
-
-function topologicalSortTab() {
+function topSortTab() {
   clearToasts();
+  let sortToast = new mdb.Toast(document.getElementById("sort-toast"));
+  sortToast.show();
+  setTimeout(() => sortToast.hide(), 5000);
 }
+//
 
 function visualize() {
   running = runningMessage;
@@ -615,51 +617,6 @@ function executeDrawPath(parentMap, endNode) {
   setTimeout(drawPath, 0, 0, path);
 }
 
-function clearGrid(statusVal = 0, keep = true, initials = true) {
-  clearToasts();
-  if (!keep) {
-    grid.addEventListener("click", divClicked);
-  }
-  for (let i = 0; i < nodes.length; ++i) {
-    for (let j = 0; j < nodes[i].length; ++j) {
-      nodes[i][j].divReference.className = "node";
-      if (nodes[i][j].isStart) {
-        if (keep || initials) {
-          nodes[i][j].divReference.classList.add("node-start");
-        } else {
-          startNode = null;
-          nodes[i][j].isStart = false;
-        }
-      }
-      if (nodes[i][j].isEnd) {
-        if (keep || initials) {
-          nodes[i][j].divReference.classList.add("node-end");
-        } else {
-          endNode = null;
-          nodes[i][j].isEnd = false;
-        }
-      }
-      if (nodes[i][j].isWall) {
-        if (keep) {
-          nodes[i][j].divReference.classList.add("node-wall");
-        } else {
-          nodes[i][j].isWall = false;
-        }
-      }
-      if (nodes[i][j].weight) {
-        if (keep) {
-          nodes[i][j].divReference.classList.add(
-            `node-strong-${nodes[i][j].weight}`
-          );
-        } else {
-          nodes[i][j].weight = 0;
-        }
-      }
-    }
-  }
-  status = statusVal;
-}
-
 function chooseRndStartEnd() {
   let rows = nodes.length;
   let cols = nodes[0].length;
@@ -682,13 +639,4 @@ function chooseRndStartEnd() {
   nodes[endRndRow][endRndCol].divReference.classList.add("node-end");
   endNode = nodes[endRndRow][endRndCol];
   nodes[endRndRow][endRndCol].isEnd = true;
-}
-
-function clearToasts() {
-  let failToast = new mdb.Toast(document.getElementById("fail-toast"));
-  let shortcutToast = new mdb.Toast(document.getElementById("shortcut-toast"));
-  let kahnToast = new mdb.Toast(document.getElementById("fail-kahn-toast"));
-  kahnToast.hide();
-  failToast.hide();
-  shortcutToast.hide();
 }

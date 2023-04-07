@@ -30,7 +30,6 @@
   <script defer type="text/javascript" src="script/min_tree/primmazegenerator.js"></script>
   <script defer type="text/javascript" src="script/top_sorting/network.js"></script>
 
-
   <!-- For visualize in topological sorting -->
   <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css" rel="stylesheet" type="text/css" />
@@ -44,21 +43,22 @@
         Algorithms</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="minimum-spanning-tree" data-toggle="tab" href="#minimum-spanning-tree-tab">Minimum
+      <a class="nav-link" id="min-tree" data-toggle="tab" href="#min-tree-tab">Minimum
         Spanning Trees</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="topological-sort" data-toggle="tab" href="#topological-sort-tab">Topological
+      <a class="nav-link" id="top-sort" data-toggle="tab" href="#top-sort-tab">Topological
         Sorting</a>
     </li>
   </ul>
 
   <!-- Tabs content -->
   <div class="tab-content">
+
     <!-- Path finding algorithm navbar area -->
     <div class="tab-pane fade show active" id="path-finder-tab">
       <header>
-        <nav class="buttons-container navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="buttons-container navbar navbar-expand-lg navbar-dark bgc-1">
           <div class="container-fluid">
             <a class="navbar-brand">Path-Finding Algorithms</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -69,7 +69,7 @@
               <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                   <div class="btn-group shadow-5">
-                    <button type="button" class="btn btn-outline-info mr-2 dropdown-toggle mt-2"
+                    <button type="button" class="btn btn-outline-primary mr-2 dropdown-toggle mt-2"
                       data-ripple-color="dark" id="path-finding-grp-btn" data-toggle="dropdown">
                       Path Finding Algorithms
                     </button>
@@ -85,7 +85,7 @@
               </ul>
             </div>
             <div class="btn-group shadow-0">
-              <button type="button" class="btn btn-outline-info mr-2 dropdown-toggle mt-2" data-toggle="dropdown"
+              <button type="button" class="btn btn-outline-primary mr-2 dropdown-toggle mt-2" data-toggle="dropdown"
                 id="maze-generation-grp-btn">
                 Random Maze Generation Algorithms
               </button>
@@ -115,8 +115,8 @@
             </li>
             </ul>
 
-            <li class="nav-item">
-              <label class="text-warning"> Node Size: </label>
+            <li class="nav-item" style="list-style: none;">
+              <label class="node-size-text"> Node Size: </label>
               <input type="range" class="form-range" id="size-slider" value="28" min="19" max="90" />
             </li>
           </div>
@@ -125,17 +125,17 @@
     </header>
 
     <!-- Ribbon below path finding algorithm navbar -->
-    <main>
+    <main id="main-path-finder">
       <section id="grid-helper">
         <div class="helper-node-container">
-          <div data-toggle="tooltip" data-html="true" title="Click and drag to move" id="start-node">
+          <div data-toggle="tooltip" data-html="false" title="Click and drag to move" id="start-node">
           </div>
           <div>
             Start Node
           </div>
         </div>
         <div class="helper-node-container">
-          <div data-toggle="tooltip" data-html="true" title="Click and drag to move" id="end-node">
+          <div data-toggle="tooltip" data-html="false" title="Click and drag to move" id="end-node">
           </div>
           <div>
             End Node
@@ -149,7 +149,7 @@
         </div>
         <div class="helper-node-container">
           <div data-toggle="tooltip" data-html="true"
-            title="Click+Shift/alt and drag to Create<br/>Right Click+Shift/alt and drag to Remove" id="weight-node"
+            title="Click+Shift and drag to Create<br/>Right Click+Shift and drag to Remove" id="weight-node"
             class="justify-node">
           </div>
           <div>
@@ -189,9 +189,9 @@
   </div>
 
   <!-- Minimum spanning trees navbar area -->
-  <div class="tab-pane fade" id="minimum-spanning-tree-tab">
+  <div class="tab-pane fade" id="min-tree-tab">
     <header>
-      <nav class="buttons-container navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="buttons-container navbar navbar-expand-lg navbar-dark bgc-1">
         <div class="container-fluid">
           <a class="navbar-brand">Minimum Spanning Tree</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -208,8 +208,8 @@
               </li>
             </ul>
 
-            <li class="nav-item">
-              <label class="text-warning" for="nodes-amount"> Generate Random: </label>
+            <li class="nav-item" style="list-style: none;">
+              <label class="node-size-text" for="nodes-amount"> Generate Random: </label>
               <input name="nodes-amount" type="range" class="form-range" id="nodes-slider" value="25" min="10"
                 max="75" />
             </li>
@@ -239,7 +239,7 @@
               </h2>
             </div>
 
-            <div id="collapseOne" class="collapse pl-3" data-parent="#mst-definition">
+            <div id="collapseOne" class="collapse pl-3">
               <blockquote class="blockquote">
                 <p>A minimum spanning tree (MST) or minimum weight spanning tree is a
                   subset of the edges of a
@@ -259,9 +259,9 @@
   </div>
 
   <!-- Topological navbar area -->
-  <div class="tab-pane fade" id="topological-sort-tab">
+  <div class="tab-pane fade" id="top-sort-tab">
     <header>
-      <nav class="buttons-container navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="buttons-container navbar navbar-expand-lg navbar-dark bgc-1">
         <div class="container-fluid">
           <a class="navbar-brand">Topological Sort</a>
         </div>
@@ -284,7 +284,7 @@
               </h2>
             </div>
 
-            <div id="collapseOne" class="collapse pl-3" data-parent="#topological-sort-definition">
+            <div id="collapseOne" class="collapse pl-3">
               <blockquote class="blockquote">
                 <p>In computer science, a topological sort or topological ordering of a directed graph is
                   a linear ordering of its vertices such that for every directed edge uv from vertex u to vertex v, u
@@ -381,63 +381,74 @@
 
   <!-- Toasts -->
 
-  <div id="shortcut-toast" class="toast bg-info text-white" data-autohide="false" data-content="11000">
+  <!-- path finding tabs toasts -->
+  <div id="path-toast" class="toast bg-info text-white" data-autohide="false">
     <div class="toast-header bg-info text-white">
-      <i class="fas fa-info-circle fa-lg mr-2"></i>
+      <i class="fa fa-info-circle fa-lg mr-2"></i>
       <strong class="mr-auto">Path-Finder</strong>
     </div>
     <div class="toast-body">
       <b><u>Click/Hover</u></b> on icons to see <u><b>Shortcuts</u></b>
     </div>
   </div>
-  <div id="fail-kahn-toast" class="toast bg-danger text-white" data-autohide="false">
+
+  <div id="path-fail-toast" class="toast bg-danger text-white" data-autohide="false">
     <div class="toast-header bg-danger text-white">
-      <i class="fas fa-exclamation-triangle fa-lg mr-2"></i>
-      <strong class="mr-auto">Topological Sort</strong>
+      <i class="fa fa-exclamation-triangle fa-lg mr-2"></i>
+      <strong class="mr-auto">Path-Finder</strong>
     </div>
     <div class="toast-body">
-      <b>Failed</b> to do <em>Topological Sort</em>, there exists a <b><u>Cycle</b></u>.
+      End node not accessible
     </div>
   </div>
-  <div id="prim-toast" class="toast bg-info text-white" data-autohide="false" data-content="11000">
+
+  <div id="path-success-toast" class="toast bg-success text-white" data-autohide="false">
+    <div class="toast-header bg-success text-white">
+      <i class="fa fa-info-circle fa-lg mr-2"></i>
+      <strong class="mr-auto">Path-Finder</strong>
+    </div>
+    <div class="toast-body">
+      <b><u>Drag</u></b> <b>Start</b> or <b>End</b> to see other outcomes in realtime
+    </div>
+  </div>
+
+  <!-- min spanning tree toasts -->
+  <div id="tree-toast" class="toast bg-info text-white" data-autohide="false">
     <div class="toast-header bg-info text-white">
-      <i class="fas fa-info-circle fa-lg mr-2"></i>
+      <i class="fa fa-info-circle fa-lg mr-2"></i>
       <strong class="mr-auto">Minimum-Spanning Tree</strong>
     </div>
     <div class="toast-body">
       Uses <b><u>Prim's Algorithm</u></b> for MST and <u><em><b>Euclidean Distance</b></em></u> for <b>weights</b>
     </div>
   </div>
-  <div id="info-toast" class="toast bg-success text-white" data-autohide="false">
-    <div class="toast-header bg-success text-white">
-      <i class="fas fa-info-circle fa-lg mr-2"></i>
-      <strong class="mr-auto">Path-Finder</strong>
-      <button type="button" class="ml-2 my-1 close text-white" data-dismiss="toast">
-        <span aria-hidden="true">×</span>
-      </button>
+
+  <!-- top sorting toasts -->
+  <div id="sort-toast" class="toast bg-info text-white" data-autohide="false">
+    <div class="toast-header bg-info text-white">
+      <i class="fa fa-info-circle fa-lg mr-2"></i>
+      <strong class="mr-auto">Topological Sort</strong>
     </div>
     <div class="toast-body">
-      You can <b><u>Drag</u></b> <b>Start</b> or <b>End</b> to see how path is affected in realtime
+      This is the sort toast.
     </div>
   </div>
-  <!-- Not found path -->
-  <div id="fail-toast" class="toast bg-danger text-white" data-autohide="false">
+
+  <div id="sort-fail-toast" class="toast bg-danger text-white" data-autohide="false">
     <div class="toast-header bg-danger text-white">
-      <i class="fas fa-exclamation-triangle fa-lg mr-2"></i>
-      <strong class="mr-auto">Path-Finder</strong>
-      <button type="button" class="ml-2 my-1 close text-white" data-dismiss="toast">
-        <span aria-hidden="true">×</span>
-      </button>
+      <i class="fa fa-exclamation-triangle fa-lg mr-2"></i>
+      <strong class="mr-auto">Topological Sort</strong>
     </div>
     <div class="toast-body">
-      Sorry, I wasn't able to find End Node
+      <b>Failed</b> to do <em>Topological Sort</em>, there exists a <b><u>Cycle</b></u>.
     </div>
   </div>
+
 
   <!-- Footer -->
 
   <footer>
-    <div class="text-center p-4 bg-dark">
+    <div class="text-center p-4 bgc-1" style="background-color: purple;">
       <a class="text-light">© 2023 Copyright: Samyar Farjam</a>
       <div style="margin-top: 10px;">
         <a class="btn btn-primary " style="background-color: #0082ca;" href="https://www.linkedin.com/in/samyarfarjam/"

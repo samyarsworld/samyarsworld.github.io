@@ -31,7 +31,7 @@ svg {
   line-height: 1;
 }
 .node {
-  border: 1px solid rgba(0, 190, 218, 0.75);
+  border: 1px solid rgba(39, 69, 205, 0.833);
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
@@ -72,7 +72,7 @@ svg {
   }
   100% {
     transform: scale(1);
-    border: 1px solid rgba(0, 190, 218, 0.75);
+    border: 1px solid rgba(39, 69, 205, 0.833);
   }
 }
 .node-passage {
@@ -82,26 +82,18 @@ svg {
 }
 .node-start {
   text-align: center;
-  /* background-image: url(../start.svg); */
   background-color: green;
-
   animation-name: wall;
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
-  filter: invert(18%) sepia(45%) saturate(7496%) hue-rotate(207deg)
-    brightness(103%) contrast(87%);
   border: 3px solid black !important;
 }
 .node-end {
   text-align: center;
-  /* background-image: url(../end.svg); */
-  background-color: red;
-
+  background-color: #920159;
   animation-name: wall;
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
-  filter: invert(18%) sepia(45%) saturate(7496%) hue-rotate(207deg)
-    brightness(103%) contrast(87%);
   border: 3px solid black !important;
 }
 
@@ -121,7 +113,7 @@ svg {
   50% {
     opacity: 1;
     transform: scale(1.2) rotate(180);
-    background-color: rgba(0, 190, 218, 0.75);
+    background-color: rgba(39, 69, 205, 0.833);
     transform: rotate(90);
   }
 
@@ -133,7 +125,7 @@ svg {
   100% {
     transform: scale(1) rotate(360);
     border: 0;
-    background-color: rgba(0, 190, 218, 0.75);
+    background-color: rgba(39, 69, 205, 0.833);
   }
 }
 
@@ -169,7 +161,7 @@ svg {
   }
 }
 .node-check {
-  background-color: rgba(0, 190, 218, 0.75);
+  background-color: rgba(39, 69, 205, 0.833);
   border: 1px solid rgba(207, 221, 239, 0.65);
   animation: check 1s ease-in-out 0s, pulse 1s ease-in-out 14s 3;
 }
@@ -182,7 +174,7 @@ svg {
 }
 
 .node-check-rt {
-  background-color: rgba(0, 190, 218, 0.75);
+  background-color: rgba(39, 69, 205, 0.833);
   border: 1px solid rgba(207, 221, 239, 0.65);
 }
 .node-check-rt-backward {
@@ -198,20 +190,20 @@ svg {
 
 @keyframes backtrack {
   0% {
-    background-color: rgba(50, 168, 82, 0.75);
+    background-color: #3337e1;
   }
 
   75% {
-    background-color: rgba(17, 104, 217, 0.75);
+    background-color: #1d1f9b;
   }
   100% {
-    background-color: rgba(0, 190, 218, 0.75);
+    background-color: #1b1c71;
   }
 }
 @keyframes fadein {
   from {
     transform: scale(1);
-    background-color: #ffd400;
+    background-color: purple;
     opacity: 1;
     border-radius: 100%;
     border: 0;
@@ -227,7 +219,7 @@ svg {
 @keyframes fadein-backward {
   from {
     transform: scale(1);
-    background-color: #ffd400;
+    background-color: purple;
     opacity: 1;
     border-radius: 100%;
     border: 0;
@@ -241,13 +233,13 @@ svg {
 }
 @keyframes pulse {
   0% {
-    background-color: rgba(0, 190, 218, 0.75);
+    background-color: rgba(39, 69, 205, 0.833);
   }
   50% {
     background-color: rgba(17, 104, 217, 0.75);
   }
   100% {
-    background-color: rgba(0, 190, 218, 0.75);
+    background-color: rgba(39, 69, 205, 0.833);
   }
 }
 
@@ -281,24 +273,24 @@ svg {
 }
 
 .node-path {
-  background-color: #ffd400;
+  background-color: purple;
   animation: wall 0.3s ease-in-out 0s, path-pulse 1s ease-in-out 10s 10;
   border: 0;
 }
 .node-path-rt {
-  background-color: #ffd400;
+  background-color: purple;
   border: 0;
 }
 
 @keyframes path-pulse {
   0% {
-    background-color: #ffd400;
+    background-color: purple;
   }
   50% {
     background-color: #eba400;
   }
   100% {
-    background-color: #ffd400;
+    background-color: purple;
   }
 }
 .node-intersection {
@@ -367,26 +359,20 @@ svg {
 }
 
 #start-node {
-  width: 38px;
-  height: 38px;
-  /* background-image: url(../start.svg); */
-  background-color: #05ac72;
-  filter: invert(18%) sepia(45%) saturate(7496%) hue-rotate(207deg)
-    brightness(103%) contrast(87%);
+  width: 32px;
+  height: 32px;
+  background-color: green;
 }
 
 #end-node {
-  width: 38px;
-  height: 38px;
-  /* background-image: url(../end.svg); */
-  background-color: red;
-  filter: invert(18%) sepia(45%) saturate(7496%) hue-rotate(207deg)
-    brightness(103%) contrast(87%);
+  width: 32px;
+  height: 32px;
+  background-color: #920159;
 }
 
 #wall-node {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   background-color: #1e2431;
   box-sizing: border-box;
 }
@@ -398,40 +384,40 @@ svg {
 }
 
 #weight-node {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-width: 3px;
   border-style: solid;
   border-color: #1e2431;
 }
 
 #unvisited-node {
-  width: 28px;
-  height: 28px;
-  border: 3px solid rgba(0, 190, 218, 0.75);
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(39, 69, 205, 0.833);
 }
 
 #current-node {
-  width: 28px;
-  height: 28px;
-  background-color: #ffd400;
+  width: 32px;
+  height: 32px;
+  background-color: purple;
   border-radius: 100%;
 }
 #visited-node-forward {
-  width: 28px;
-  height: 28px;
-  background-color: rgba(0, 190, 218, 0.75);
+  width: 32px;
+  height: 32px;
+  background-color: rgba(39, 69, 205, 0.833);
 }
 #visited-node-backward {
-  width: 28px;
-  height: 28px;
-  background-color: #13eba2;
+  width: 32px;
+  height: 32px;
+  background-color: #04b75a;
 }
 
 #visited-node-backtrack {
-  width: 28px;
-  height: 28px;
-  background-color: rgba(50, 168, 82, 0.75);
+  width: 32px;
+  height: 32px;
+  background-color: #3337e1;
 }
 .helper-node-container {
   display: flex;
@@ -465,17 +451,58 @@ svg {
 }
 
 .nav-tabs .nav-link {
-  color: rgb(239, 188, 5) !important;
-  background-color: #262727 !important;
+  color: #e8e7d5 !important;
+  background-color: #334747 !important;
   border-bottom-width: 5px !important;
 }
 .nav-link:hover {
   color: #262727 !important;
-  background-color: rgb(239, 188, 5) !important;
+  background-color: #4db33d !important;
 }
 
 .nav-link.active {
   color: #262727 !important;
-  background-color: rgb(239, 188, 5) !important;
-  border-color: #0b89b3 !important;
+  background-color: #4db33d !important;
+  border-color: #3fa037 !important;
+}
+
+.bgc-1 {
+  background-color: #001e2b !important;
+}
+
+#grid-helper {
+  background-color: white;
+}
+#grid-container {
+  background-color: white;
+}
+
+/* boostrap button color change */
+.btn-outline-primary {
+  color: #00584a !important;
+  border-color: #00584a !important;
+}
+.btn-outline-primary:hover {
+  color: #e8e7d5 !important;
+  background-color: #00584a !important;
+}
+.btn-outline-danger {
+  color: #00ed64 !important;
+  border-color: #00ed64 !important;
+}
+.btn-outline-danger:hover {
+  color: #e8e7d5 !important;
+  background-color: #00ed64 !important;
+}
+.btn-outline-warning {
+  color: #005880 !important;
+  border-color: #005880 !important;
+}
+.btn-outline-warning:hover {
+  color: #fff !important;
+  background-color: #005880 !important;
+}
+
+.node-size-text {
+  color: #005880 !important;
 }

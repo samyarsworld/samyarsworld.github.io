@@ -34,7 +34,7 @@ function dfs(grid, start, end, s, parentMap, choices, prev = null) {
     setTimeout(dfs, 10, grid, start, end, s, parentMap, choices, curr);
   } else {
     setDisabledBtns();
-    let toastTriggerEl = document.getElementById("fail-toast");
+    let toastTriggerEl = document.getElementById("path-fail-toast");
     let toast = new mdb.Toast(toastTriggerEl);
     toast.show();
     return;
@@ -82,7 +82,7 @@ function dfsRT(grid, start, end) {
   }
 
   setDisabledBtns();
-  let toastTriggerEl = document.getElementById("fail-toast");
+  let toastTriggerEl = document.getElementById("path-fail-toast");
   let toast = new mdb.Toast(toastTriggerEl);
   toast.show();
   return;

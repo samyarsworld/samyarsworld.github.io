@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", generateGrid);
 document
-  .querySelector("#size-slider")
+  .getElementById("size-slider")
   .addEventListener("input", (e) => resizeGrid(e.target.value));
 const NODE_SIZE = 28;
 let nodes = [];
@@ -8,6 +8,7 @@ let startNode = null;
 let endNode = null;
 let grid = null;
 let mouseDown = false;
+
 function resizeGrid(size) {
   let rows =
     height > width
@@ -55,10 +56,10 @@ function resizeGrid(size) {
   grid.appendChild(documentFragment);
 }
 function generateGrid() {
-  let shortcutToast = new mdb.Toast(document.getElementById("shortcut-toast"));
-  shortcutToast.show();
+  let pathToast = new mdb.Toast(document.getElementById("path-toast"));
+  pathToast.show();
   document.querySelector("#breakpoint-toggler").click();
-  setTimeout(() => shortcutToast.hide(), 6500);
+  setTimeout(() => pathToast.hide(), 6500);
   grid = document.createElement("div");
   grid.id = "grid";
   document.getElementById("grid-container").appendChild(grid);

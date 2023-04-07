@@ -83,7 +83,7 @@ function bidirectionalAStar(
     );
   } else {
     setDisabledBtns();
-    let toastTriggerEl = document.getElementById("fail-toast");
+    let toastTriggerEl = document.getElementById("path-fail-toast");
     let toast = new mdb.Toast(toastTriggerEl);
     toast.show();
     return;
@@ -167,7 +167,7 @@ function bidirectionalDijkstra(
     );
   } else {
     setDisabledBtns();
-    let toastTriggerEl = document.getElementById("fail-toast");
+    let toastTriggerEl = document.getElementById("path-fail-toast");
     let toast = new mdb.Toast(toastTriggerEl);
     toast.show();
     return;
@@ -381,7 +381,7 @@ function bidirectionalDijkstraRT(grid, start, end) {
   }
 
   setDisabledBtns();
-  let toastTriggerEl = document.getElementById("fail-toast");
+  let toastTriggerEl = document.getElementById("path-fail-toast");
   let toast = new mdb.Toast(toastTriggerEl);
   toast.show();
   return;
@@ -479,7 +479,7 @@ function bidirectionalAStarRT(grid, start, end) {
   }
 
   setDisabledBtns();
-  let toastTriggerEl = document.getElementById("fail-toast");
+  let toastTriggerEl = document.getElementById("path-fail-toast");
   let toast = new mdb.Toast(toastTriggerEl);
   toast.show();
   return;

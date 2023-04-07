@@ -11,7 +11,7 @@ let taskCounter = 1;
 function generateFormInput(e) {
   e.preventDefault();
   ++taskCounter;
-  document.querySelector(`#task-${taskCounter}-input`).hidden = false;
+  document.getElementById(`task-${taskCounter}-input`).hidden = false;
   if (taskCounter === 5) {
     e.target.disabled = true;
   }
@@ -104,10 +104,11 @@ function hasCycleUtil(start, adjMap, black) {
 
 function topologicalSort(adjMap, inDegreeMap) {
   if (hasCycle(adjMap)) {
-    let kahnToastTriggerEl = document.getElementById("fail-kahn-toast");
-    let kahnToast = new mdb.Toast(kahnToastTriggerEl);
-    kahnToast.show();
-    setTimeout(() => kahnToast.hide(), 6500);
+    let topSortToast = new mdb.Toast(
+      document.getElementById("sort-fail-toast")
+    );
+    topSortToast.show();
+    setTimeout(() => topSortToast.hide(), 5000);
     return;
   }
   let q = [];
