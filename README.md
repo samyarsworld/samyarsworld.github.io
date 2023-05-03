@@ -1,105 +1,92 @@
 # Project Title: Real-time Chat Application
 
-### To use the application, head to samyarsworld.github.io and play around!
+### To use the application, head to samyarsworld.github.io and play around with our cool algorithms!
 
 
 ## Index
 1. [About](#about)
 2. [Demo](#demo)
 3. [Technologies](#tech)
-4. [Usage](#usage)
-    * [Installation](#installation)
-    * [In the website](#website)
-5. [Developer Features](#dev)
-6. [Future Improvements](#future)
-7. [Credits](#credits) 
-8. [License](#license)
+4. [Installation](#installation)
+5. [In the Website](#usage)
+6. [Developer Features](#dev)
+7. [Future Improvements](#future)
+8. [Credits](#credits) 
+9. [License](#license)
  
 
 <a name="about"></a>
 ## About
-
-This is a real-time chat application made using React and Redux as frontend, and Node.js, MongoDB Atlas as backend. Socket.io library is used for real-time data exchange. The project includes an authentication page with registry that in addition to normal register and login info, it has a section to create AI-made pictures for your profile picture using Open AI DallE. Also, files are stored in Cloudinary cloud storage. The chat includes all chat functionality like real-time typing, notifications, messages, image message, emojis, last seen, seen, or delivered notification, and media storage for each chat.
+This project features three different algorithm visualizers. You can explore pathfinding, minimum spanning trees, and topological sorting algorithms. These visualizers allow you to see these algorithms in action and gain a better understanding of their functionality.
 
 
 <a name="demo"></a>
 ## Demo
 
-| Authentication Page  |
+| Pathfinder Algorithm View  |
 |:----------------------|
-|<img src="https://drive.google.com/uc?export=view&id=1_9MeqzsRwzAMEfgVG6DYsn7ZKMYtwS0h" width="100%" height="100%"/> |
+|<img src="https://drive.google.com/uc?export=view&id=1XZNd67sRb4dImM7JX-MbB204fM-9a9MA" width="100%" height="100%"/> |
 
-| Main Chat Desktop View |
+| Pathfinder Algorithm With Maze View  |
 |:----------------------|
-<img src="https://drive.google.com/uc?export=view&id=1-QtIt1Bsb4WhgOXa9ATvRelik_WMAO0d" width="100%" height="100%"/> |
+|<img src="https://drive.google.com/uc?export=view&id=1VYOlgPsyS6kzt2LbhmIRVt_KAROtvQMx" width="100%" height="100%"/> |
 
+| Minimum Spanning Trees Algorithm View |
+|:----------------------|
+<img src="https://drive.google.com/uc?export=view&id=1jjK6AiyUp0kaskmtLOJqyyJ6FloGxBtj" width="100%" height="100%"/> |
 
+| Topological Sort Algorithm View |
+|:----------------------|
+<img src="https://drive.google.com/uc?export=view&id=1OseG-5FP1bXipds042iEfaHkGPmyulb9" width="100%" height="100%"/> |
 
-| Main Chat Mobile View Contacts  | &nbsp;&nbsp;&nbsp; |  Main Chat Mobile View Chat  |
-|:--------:|:-------------:|:--------:|
-|<img src="https://drive.google.com/uc?export=view&id=1-dIbadCR_qVwcq-nw0t0WhULuGN1t3a5" style="margin-right: 10px" width="500" height="100%"/> | &nbsp;&nbsp;&nbsp; | <img src="https://drive.google.com/uc?export=view&id=1uCXv37W7XtssM-y5RsmXpsv-VnbMzxmR" width="500" height="100%"/> |
 
 
 <a name="tech"></a>
 ## Technologies
-- React.js
-- Redux
-- Node.js
-- css, HTML, Javascript
+- Javascript
+- HTML
+- css
+- Bootstrap
+- Font-awesome
+- Toast
+- Vis.js
 
 
 <a name="usage"></a>
 ### Usage
 
-To use the application, head to https://galactchat.netlify.app/ and register. To use it locally follow the next section.
+To use the application, head to samyarsworld.github.io . To use it locally, follow the next section.
 
 <a name="installation"></a>
-### Installation
 
-To install Galactic Social Network on your local computer, you need to:
+To install the pathfinding website on your local computer, you need to:
 
 1. Clone the repository to your local machine.
 
    ```
-   git clone https://github.com/<username>/real-time-chat-app.git
+   git clone https://github.com/samyarsworld/samyarsworld.github.io
+
    ```
 
 2. Navigate to the project directory.
 
    ```
-   cd chat
+   cd algo_visualizers
    ```
 
-3. Navigate to the frontend directory and install the dependencies for both frontend using the following command in terminal:
-
-   ```
-   cd frontend/
-   npm install
-   ```
-4. From therre, navigate to the backend directory and install the dependencies for backend using the following command terminal:
- 
-   ```
-   cd ../backend/
-   npm install
-   ```
-
-4. Navigate to `cd ./config` and create a `config.env` file add the following environment variables:
-
-
-5. Run the project using the following command in the backend directory in a separate terminal window:
-
-   ```
-   npm run dev
-   ```
-
-   This will start the frontend and backend servers.
-
-
-### In the website
-<a name="website"></a>
+3. Simply run live on your IDE or open index.html located in root of the project in your favourite browser.
 
 
 
+<a name="usage"></a>
+## In the Website
+In this algorithm visualizer website you can explore and interact with different algorithm visualizers. There a variety of tools that allow you to understand and see algorithms in action.
+
+On the first tab you can find visualizers that visualize various well-known pathfinding algorithms, which is shown in a grid space where you can see the journey from a start node to a finish node. There are various algoirthms that you can choose from including, DFS, BFS, Dijkstra (UCS), A* (Manhattan Distance), Greedy Best-first, Bidirectional Dijkstra, and Bidirectional A*. Some of these algorithms are used to find the shortest path between two points or the fastest way to find a path, and they commonly used in GPS systems, gaming, and robotics. Additionally, you can add walls to simulate dead-end roads or add weights that describe how much traffic is in some directions. After finding a path, you will get prompted and the found path is shown.
+
+On the second tab, Minimum Spanning Tree (MST) visualizer is presented. MST is a subset of the edges of a connected, edge-weighted undirected graph. The MST connects all the vertices together without any cycles and with the minimum possible total edge weight. This algorithm has various applications in network design, clustering, and image segmentation. Simply click on the screen and the algorithm find the best possible way to connect the new dot to the cluster.
+
+Lastly, a topological sorting algorithm visualizer is shown in the third tab, which creates a linear ordering of vertices in a directed graph. This algorithm is commonly used in scheduling, task management, and job sequencing. Add you tasks in the inputs, add their prerequisites. You can add upto 5 tasks at the moment. Visulize and see how you tasks are connected.
 
 
 <a name="dev"></a>
@@ -115,7 +102,7 @@ To install Galactic Social Network on your local computer, you need to:
 
 - SAMYAR FARJAM (https://github.com/samyarsworld)
 
-If you'd like to contribute to GalacticChat, please feel free to submit a pull request or open an issue on our [GitHub repository](https://github.com/samyarsworld/galactchat-chat-app-backend). We welcome all contributions and feedback.
+If you'd like to contribute to algo_visualizers, please feel free to submit a pull request or open an issue on our [GitHub repository](https://github.com/samyarsworld/samyarsworld.github.io). We welcome all contributions and feedback.
 
 ## License
 
