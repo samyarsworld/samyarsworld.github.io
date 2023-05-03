@@ -62,7 +62,6 @@ To install the pathfinding website on your local computer, you need to:
 
    ```
    git clone https://github.com/samyarsworld/samyarsworld.github.io
-
    ```
 
 2. Navigate to the project directory.
@@ -89,11 +88,23 @@ Lastly, a topological sorting algorithm visualizer is shown in the third tab, wh
 <a name="dev"></a>
 ## Developer Features
 
+**UI Design with HTML, CSS, and Bootstrap**: The website's UI is built using HTML, CSS, and the Bootstrap library, providing a user-friendly interface.
+
+**Dynamic User Experience with Javascript**: Javascript is used to create a dynamic user experience by manipulating the DOM and HTML.
+
+**Toast Notifications with Toast Library**: The Toast library is used to provide dynamic prompts on the screen, improving the user experience.
+
+**Pathfinding Algorithm with Node Classes**: The pathfinding algorithm's interface is created using Node classes, allowing for dynamic changes to each grid's state.
+
+**Object-Based Design for Pathfinding Algorithms**: Various pathfinding algorithms are coded using Javascript and connected to the frontend grid using an object-based design.
+
 
 <a name="future"></a>
 ## Future Improvements
 
+**Expand Algorithm Visualization**: The website's goal is to provide an immersive and interactive experience with various algorithm visualizations. The aim is to expand the selection of visualizations, including sorting algorithms and Sudoku visualizers that use backtracking. 
 
+By adding new algorithm visualizations, the website hopes to provide a broader range of educational resources for users, making it a valuable tool for students, developers, and anyone interested in learning about algorithms. Keep an eye out for updates as the website continues to grow and expand its selection of algorithm visualizations.
 
 ## Credits
 
