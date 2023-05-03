@@ -7,7 +7,7 @@
 1. [About](#about)
 2. [Demo](#demo)
 3. [Technologies](#tech)
-4. [Installation](#installation)
+4. [Usage and Installation](#installation)
 5. [In the Website](#usage)
 6. [Developer Features](#dev)
 7. [Future Improvements](#future)
@@ -52,12 +52,9 @@ This project features three different algorithm visualizers. You can explore pat
 - Vis.js
 
 
-<a name="usage"></a>
-### Usage
-
-To use the application, head to samyarsworld.github.io . To use it locally, follow the next section.
-
 <a name="installation"></a>
+## Usage and Installation
+To use the application, head to samyarsworld.github.io . To use it locally, follow the next section.
 
 To install the pathfinding website on your local computer, you need to:
 
