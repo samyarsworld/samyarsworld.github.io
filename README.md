@@ -1,4 +1,4 @@
-# Project Title: Real-time Chat Application
+# Project Title: Algorithm Visualizers
 
 ### To use the application, head to samyarsworld.github.io and play around with our cool algorithms!
 
